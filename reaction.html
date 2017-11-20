@@ -71,7 +71,7 @@
 <script>
   function addbox(){
     const x = document.createElement("div");
-    x.className = "falling";
+    x.className = "falling falling" + Math.floor(Math.random()*4);
     document.body.appendChild(x);
     x.style.left = Math.random()*100 + "%";
     x.style.animationDelay = Math.random()*6 + "s";
