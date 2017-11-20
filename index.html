@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HTML Site</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <style>
+		@keyframes condemned_blink_effect {
+				0% {
+						visibility: hidden;
+				}
+				50% {
+						visibility: hidden;
+				}
+				100% {
+						visibility: visible;
+				}
+		}
+    @keyframes fall {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(100vh);
+        }
+    }
+		.blink {
+				animation: 2s linear infinite condemned_blink_effect;
+		}
+    body {
+      background: black;
+      color: yellow;
+    }
+		main {
+		    min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+}
+    video {
+      min-height: 80vh;
+      max-width: 80vw;
+    }
+    .falling {
+      width: 64px;
+      height: 64px;
+      background: url(cup.png) center no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: -64px;
+      animation: 3s ease-in infinite fall;
+    }
+    .falling1 {
+      background-image: url(bruceshrug.gif);
+    }
+    .falling2 {
+      background-image: url(confused.png);
+    }
+    .falling3 {
+      background-image: url(ishard.jpg);
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1 class="blink">OZCA Party!</h1>
+  <video id="video" autoplay muted loop src="dabtastic.mp4">
+  </video>
+</main>
+
+<script>
+  function addbox(){
+    const x = document.createElement("div");
+    x.className = "falling falling" + Math.floor(Math.random()*4);
+    document.body.appendChild(x);
+    x.style.left = Math.random()*100 + "%";
+    x.style.animationDelay = Math.random()*6 + "s";
+  }
+  for (let i = 0; i < 20; i++) {
+    addbox();
+  }
+</script>
+
+</body>
+</html>
