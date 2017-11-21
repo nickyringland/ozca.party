@@ -1,0 +1,9 @@
+<img src="https://web.comp.gl/preview/cat.jpg" onmousemove="party()">
+<script>
+let hue=0;
+function party() {
+  hue+=6;
+  let image = document.querySelector('img');
+  image.style.filter = `hue-rotate(${hue}deg)`;
+}
+</script>
